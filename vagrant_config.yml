@@ -1,0 +1,38 @@
+# Specify which vagrant box to use.
+# VBox
+# :box: "hashicorp/precise64"
+# KVM
+#:box: "KVM/precise64"
+#:box_url: "https://vagrant-kvm-boxes.s3.amazonaws.com/precise64-kvm.box"
+#VMWare
+#:box: "spantree/ubuntu-precise-64"
+#AWS
+:box: "dummy"
+
+# Assign a private IP to your box.
+#:private_ip: "192.168.150.2"
+# Force DHCP instead of static ip
+:dhcp: false
+# Give it a unique hostname(use a . to make cookies work)
+:hostname: reddit.local
+
+# Expose the VM's port 80 on a specified port. May be set to false to disable.
+:forward_port: 8001
+
+# Where, or if, the required repositories are located.
+# If any of these are set to false, they will be cloned
+# inside of the environment instead of mounted from outside.
+:local: {
+}
+# Specify what plugins to install here. If they are not also specified in local,
+# they must be found at https://github.com/reddit
+:plugins: [
+  "about",
+  "meatspace",
+  "liveupdate"
+]
+# How much cpu and memory to use
+#:cpu: 4 #Cores
+#:memory: 4096 #MB
+#Use NFS for shared folder mounts(increases performance with virtualbox)
+#:nfs: true
